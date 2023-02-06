@@ -1,0 +1,32 @@
+.TodoSearch {
+    position: relative;
+}
+
+.TodoSearch__input {
+    background-color: #abc4d4;
+    padding: 0rem 1rem 0rem 3rem;
+    font-size: 1rem;
+    width: -webkit-fill-available;
+    max-width: 400px;
+    border-radius: 1rem;
+    color: #47466D;
+    border: none;
+    outline: 0px;
+    height: 3.2rem;
+    font-weight: 600;
+}
+
+.TodoSearch__input::placeholder {
+    color: #47466D;
+}
+
+.TodoSearch__icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 2rem;
+    fill: #47466D;
+    margin: auto;
+}

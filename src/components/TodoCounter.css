@@ -1,0 +1,54 @@
+.TodoCounter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.TodoCounter__container {
+    padding: 1rem;
+    background-color: #47466D;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.TodoCounter__progress {
+    position: relative;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    background: conic-gradient(#abedd8 20deg, transparent 0deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.TodoCounter__progress::before {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: #47466D;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.TodoCounter__value {
+    position: relative;
+    max-width: 8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #abedd8;
+}
+
+.TodoCounter__text {
+    position: relative;
+    font-size: .8rem;
+    color: #abedd8;
+    font-weight: 600;
+}
