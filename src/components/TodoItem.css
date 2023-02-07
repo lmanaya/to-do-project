@@ -2,9 +2,7 @@
     padding: 0.5rem;
     margin: 0.5rem 0.25rem;
     display: flex;
-    align-items: center;
     gap: .5rem;
-    cursor: pointer;
     border-radius: .5rem;
 }
 
@@ -16,20 +14,34 @@
 .TodoItem__check {
     width: 1.5rem;
     height: 1.5rem;
-    border: solid 1px gray;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
+    display: none;
 }
 
-.TodoItem__check.complete {
-    border: solid 1px #abedd8;
-    background-color: #abedd8;
+.TodoItem__check--shown {
+    display: block;
 }
 
 .TodoItem__check svg {
-    width: 1rem;
-    height: 1rem;
-    fill: white;
+    width: 100%;
+    height: 100%;
+    fill: #bdbdbd;
+}
+
+.TodoItem__check.TodoItem__check--checked svg {
+    fill: #51dd51;
+}
+
+.TodoItem__delete {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.TodoItem__delete svg {
+    fill: lightcoral;
 }
