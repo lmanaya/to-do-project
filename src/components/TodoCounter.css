@@ -1,4 +1,8 @@
 .TodoCounter {
+    display: none;
+}
+
+.TodoCounter--shown {
     display: flex;
     justify-content: flex-end;
 }
