@@ -1,8 +1,10 @@
-import React from "react";
 import './TodoCounter.css';
+import React from "react";
+import { TodoContext } from "../context/TodoContext"
 
-function TodoCounter(props) {
-    const completedPercentage = Math.round(100 * props.completedTodos / props.totalTodos);
+function TodoCounter() {
+    const {completedTodos, totalTodos} = React.useContext(TodoContext);
+    const completedPercentage = Math.round(100 * completedTodos / totalTodos);
 
     return (
         <div className="TodoCounter">
