@@ -7,14 +7,28 @@ import { TodoList } from "./components/TodoList";
 import { TodoItem } from "./components/TodoItem";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 
-const defaultTodos = [
-  { text: 'Lavar la loza', complete: false },
-  { text: 'Tomar agua', complete: false },
-  { text: 'Pasear al perro', complete: true }
-]
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
+
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = [];
+  } else {
+    parsedItem = JSON.parse(localStorageItem);
+  }
+
+  const [item, setItem] = React.useState(parsedItem);
+  const saveItem = (newItem) =>{
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  }
+
+  return [item, saveItem];
+}
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, setTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => todo.complete).length;
