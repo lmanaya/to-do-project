@@ -1,0 +1,47 @@
+.TodoForm__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.TodoForm__textarea {
+    width: 100%;
+    outline: 0px;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: .8rem;
+    min-height: 4rem;
+}
+
+.TodoForm__button {
+    font-size: .9rem;
+    font-weight: 600;
+    border: none;
+    padding: 0rem 1.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    min-width: 7rem;
+    transition: all ease-in-out .6s;
+}
+
+.TodoForm__button.TodoForm__cancelButton {
+    background-color: transparent;
+    color: #3d84a7;
+    border: solid 2px #3d84a7;
+}
+
+.TodoForm__button.TodoForm__cancelButton:hover {
+    background-color: #3d84a7;
+    color: white;
+    border: solid 2px #3d84a7;
+}
+
+.TodoForm__button.TodoForm__submitButton {
+    background: linear-gradient(45deg, #47466D 100%, #3d84a7);
+    color: white;
+}
+
+.TodoForm__button.TodoForm__submitButton:hover {
+    background: linear-gradient(45deg, #47466D, #3d84a7);
+    color: white;
+}

@@ -28,12 +28,23 @@ function TodoProvider(props) {
         setTodos(newTodos);
     }
 
+    const createTodo = (text) =>{
+        const newTodos = [...todos];
+        newTodos.push({
+            text: text,
+            complete: false,
+        })
+        setTodos(newTodos);
+    }
+
     const deleteTodo = (text) =>{
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1)
         setTodos(newTodos);
     }
+
+    const [openModal, setOpenModal] = React.useState(false);
 
     return (
         <TodoContext.Provider value={{
@@ -43,7 +54,10 @@ function TodoProvider(props) {
             setSearchValue,
             renderedTodos,
             completeTodo,
+            createTodo,
             deleteTodo,
+            openModal,
+            setOpenModal,
         }}>
             {props.children}
         </TodoContext.Provider>
