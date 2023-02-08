@@ -15,7 +15,7 @@ function TodoCounter() {
                 <div className="TodoCounter__progress" style={{background: `conic-gradient(#abedd8 ${completedPercentage * 3.6}deg, transparent 0deg)`}}>
                     <span className="TodoCounter__value">{completedPercentage}%</span>
                 </div>
-                <span className="TodoCounter__text">Tareas <br />completadas</span>
+                <span className="TodoCounter__text">Completed <br />tasks</span>
             </div>
         </div>
     );

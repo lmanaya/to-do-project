@@ -12,8 +12,8 @@ function TodoSearch() {
     return (
         <div className="TodoSearch">
             <input
-                className="TodoSearch__input"
-                placeholder="Escribe aquí"
+                className="TodoSearch__input Text Text--Large Text--Bold"
+                placeholder="Search tasks"
                 value={searchValue}
                 onChange={onSearchValueChange}
             />

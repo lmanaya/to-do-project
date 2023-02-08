@@ -1,17 +1,4 @@
 .TodoList {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-}
-
-.TodoList__title {
-    margin-bottom: .5rem;
-    padding-bottom: .5rem;
-    border-bottom: solid 1px #47466D;
-    color: #47466D;
-}
-
-ul {
     padding: 0px;
     list-style-type: none
 }

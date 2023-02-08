@@ -12,8 +12,6 @@
 }
 
 .TodoItem__check {
-    width: 1.5rem;
-    height: 1.5rem;
     cursor: pointer;
     display: none;
 }
@@ -23,8 +21,8 @@
 }
 
 .TodoItem__check svg {
-    width: 100%;
-    height: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: #bdbdbd;
 }
 

@@ -23,27 +23,24 @@ function TodoForm() {
     return (
         <form onSubmit={onSubmit}>
             <div className="Todo--mb">
-                <p
-                    className="TodoForm__title Todo--mb"
-                >Nueva tarea</p>
                 <textarea
-                    className="TodoForm__textarea"
+                    className="TodoForm__textarea Text Text--Large Mb-05"
                     value={newText}
                     onChange={onChange}
-                    placeholder="Escribe tu nueva tarea"
+                    placeholder="Write a new task"
                 ></textarea>
             </div>
-            <div className="Todo__header">
+            <div className="TodoForm__buttonSection">
                 <button
                     className="TodoForm__button TodoForm__cancelButton"
                     onClick={onCancel}
                     type="button"
-                >Cancelar</button>
+                >Cancel</button>
                 <button
                     className="TodoForm__button TodoForm__submitButton"
                     onClick={onSubmit}
                     type="button"
-                >Crear</button>
+                >Create</button>
             </div>
         </form>
     );
