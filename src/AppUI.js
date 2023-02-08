@@ -8,8 +8,11 @@ import { CreateTodoButton } from "./components/CreateTodoButton";
 import { TodoContext } from './context/TodoContext';
 import { Modal } from './components/Modal';
 import { TodoForm } from './components/TodoForm';
+import { useHandleResize } from './hooks/useHandleResize';
 
 function AppUI() {
+    const { isDesktop } = useHandleResize();
+
     const {
         renderedTodos,
         completeTodo,
@@ -20,37 +23,47 @@ function AppUI() {
 
     return (
         <div className='TodoApp'>
-            <div className='Todo'>
-                <div className='Todo__header Todo--mb'>
-                    <div className='Todo__column'>
-                        <h1 className='Todo__title Todo--mb'>Mis tareas</h1>
-                        <TodoSearch />
+            <div className='TodoApp__columns'>
+                <div className='TodoApp__column'>
+                    <div className='TodoApp--w100'>
+                        <div className='Mb-2'>
+                            <p className='Title Title--Large'>Hi Liyeira!</p>
+                            <p className='Text Text--Large'>Welcome back to the workspace</p>
+                        </div>
+                        {isDesktop && (
+                            <TodoForm />
+                        )}
                     </div>
-                    <div className='Todo__column'>
-                        <TodoCounter />
-                    </div>
+                    <TodoCounter />
                 </div>
-                <TodoList>
-                    {renderedTodos.map(todo => (
-                        <TodoItem
-                            key={todo.text}
-                            text={todo.text}
-                            complete={todo.complete}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
-                        />
-                    ))}
-                </TodoList>
-                <CreateTodoButton />
-                {openModal && (
-                    <Modal setOpenModal={setOpenModal}>
-                        <TodoForm />
-                    </Modal>
-                )}
-
+                <div className='TodoApp__column'>
+                    <div className='Mb-1'>
+                        <p className='Subtitle'>TO DO LIST</p>
+                    </div>
+                    <TodoSearch />
+                    <TodoList>
+                        {renderedTodos.map(todo => (
+                            <TodoItem
+                                key={todo.text}
+                                text={todo.text}
+                                complete={todo.complete}
+                                onComplete={() => completeTodo(todo.text)}
+                                onDelete={() => deleteTodo(todo.text)}
+                            />
+                        ))}
+                    </TodoList>
+                </div>
             </div>
+            {!isDesktop && (
+                <CreateTodoButton />
+            )}
+            {openModal && (
+                <Modal setOpenModal={setOpenModal}>
+                    <TodoForm />
+                </Modal>
+            )}
         </div>
     );
 }
 
-export { AppUI };
+export default AppUI;

@@ -1,28 +1,70 @@
 .TodoApp {
-  background: linear-gradient(180deg, #47466D 10%, #46cdcf 100%);
-  min-height: var(--vh-in-px, 100vh);
+  background-color: #46cdcf;
+  min-height: var(--vh-in-px, 100vh);;
 }
 
-.Todo {
-  padding: 3rem 5rem;
-  max-width: 1200px;
+.TodoApp--w100 {
+  width: 100%;
+}
+
+.TodoApp__columns {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem;
+  max-width: 1400px;
   margin: auto;
 }
 
-.Todo__header {
+.TodoApp__column:first-child {
   display: flex;
-  align-items: flex-end;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 1rem;
 }
 
-.Todo__header .Todo__column {
-  width: 50%;
+.TodoApp__column:last-child {
+  background: white;
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
-.Todo__title {
-  color: white;
+@media (min-width: 600px) {
+  .TodoApp__columns {
+    padding: 3rem 2rem;
+  }
 }
 
-.Todo--mb {
-  margin-bottom: 1rem;
+@media (min-width: 994px) {
+  .TodoApp {
+    height: var(--vh-in-px, 100vh);
+  }
+
+  .TodoApp__columns {
+    flex-direction: row;
+    height: -webkit-fill-available;
+    padding: 4rem 2rem;
+    gap: 1rem;
+  }
+
+  .TodoApp__column {
+    width: auto;
+  }
+
+  .TodoApp__column:first-child {
+    min-width: 30rem;
+    width: 40%;
+    padding-left: 0rem;
+  }
+
+  .TodoApp__column:last-child {
+    flex-grow: 1;
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .TodoApp__columns {
+    gap: 3rem;
+  }
 }

@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
+  min-width: 320px;
 }
 
 code {
@@ -19,4 +20,53 @@ code {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
+}
+
+.Title {
+  font-size: 2.5rem;
+  line-height: calc(2.5rem * 1.2);
+  font-weight: bold;
+}
+
+.Title.Title--Large {
+  font-size: 3rem;
+  line-height: calc(3rem * 1.2);
+}
+
+.Subtitle {
+  font-size: 1.75rem;
+  line-height: calc(1.75rem * 1.2);
+  font-weight: 500;
+}
+
+.Text {
+  font-size: 0.875rem;
+  line-height: calc(0.875rem * 1.2);
+  font-weight: normal;
+}
+
+.Text.Text--Large {
+  font-size: 1rem;
+  line-height: calc(1rem * 1.2);
+}
+
+.Text.Text--Small {
+  font-size: 0.75rem;
+  line-height: calc(0.75rem * 1.2);
+}
+
+.Text.Text--Bold {
+  font-weight: bold;
+}
+
+.Mb-05 {
+  margin-bottom: .5rem;
+}
+
+.Mb-1 {
+  margin-bottom: 1rem;
+}
+
+.Mb-2 {
+  margin-bottom: 2rem;
 }
